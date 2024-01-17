@@ -1,2 +1,19 @@
-package controller;public class CustomerReportsFormController {
+package controller;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.BorderPane;
+
+public class CustomerReportsFormController {
+
+    @FXML
+    private BorderPane paneCustomerReports;
+
+    @FXML
+    private Label lblUserProfileHeading1;
+
+    @FXML
+    private TableView<?> tblOrderReports;
+
 }

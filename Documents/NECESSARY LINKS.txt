@@ -1,3 +1,8 @@
+Git Repocitory
+==============
+gh repo clone JanakaMadusanka/POS-E-E-Service
+
+
 Use Case Diagram
 ================
 
@@ -14,3 +19,8 @@ Wireframe
 ==========
 
 https://drive.google.com/file/d/1X6SDp6_pAhNj98DSmp8gKLghMcGVCQ5G/view?usp=sharing
+
+
+Prototype
+==========
+https://www.figma.com/file/Z5tcDzpLnZzI5kuz2CY0LS/Untitled?type=design&node-id=41%3A452&mode=design&t=7G1y75urLc5CO1Du-1

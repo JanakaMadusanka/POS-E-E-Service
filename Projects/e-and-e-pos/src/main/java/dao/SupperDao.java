@@ -1,2 +1,4 @@
-package dao;public interface SupperDao {
+package dao;
+
+public interface SupperDao {
 }

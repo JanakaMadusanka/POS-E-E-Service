@@ -1,2 +1,4 @@
-package BO;public interface SupperBo {
+package BO;
+
+public interface SupperBo {
 }

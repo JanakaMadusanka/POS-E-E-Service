@@ -7,295 +7,162 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.BoxBlur?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="paneMyAccount" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Test01FormController">
+<BorderPane fx:id="paneUserRegistration" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserRegistrationFormController">
     <opaqueInsets>
         <Insets />
     </opaqueInsets>
-    <center>
-        <GridPane alignment="CENTER" prefHeight="1000.0" prefWidth="1116.0" style="-fx-background-color: rgba(21, 169, 160, 0.76);" BorderPane.alignment="CENTER">
-            <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="500.0" prefHeight="750.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="-Infinity" minHeight="5.0" prefHeight="10.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <children>
-                <GridPane GridPane.rowIndex="1">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="250.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="5.0" prefWidth="10.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="40.0" prefHeight="75.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="-Infinity" minHeight="5.0" prefHeight="10.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                    <GridPane>
-                        <columnConstraints>
-                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        </columnConstraints>
-                        <rowConstraints>
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="250.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" valignment="CENTER" vgrow="SOMETIMES" />
-                        </rowConstraints>
-                        <children>
-                            <JFXButton fx:id="btnExit" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnExitOnAction" prefHeight="12.0" prefWidth="159.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Exit" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="14">
-                                <font>
-                                    <Font name="Calibri Bold" size="18.0" />
-                                </font>
-                                <effect>
-                                    <BoxBlur />
-                                </effect>
-                            </JFXButton>
-                            <JFXButton fx:id="btnLogout" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnLogoutOnAction" prefHeight="12.0" prefWidth="159.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Logout" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="3">
-                                <font>
-                                    <Font name="Calibri Bold" size="14.0" />
-                                </font>
-                                <effect>
-                                    <BoxBlur />
-                                </effect>
-                            </JFXButton>
-                            <JFXButton fx:id="btnCustomers" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnCustomersOnAction" prefHeight="34.0" prefWidth="224.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Customers" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="12">
-                                <font>
-                                    <Font name="Calibri Bold" size="18.0" />
-                                </font>
-                                <effect>
-                                    <BoxBlur />
-                                </effect>
-                            </JFXButton>
-                            <JFXButton fx:id="btnRepairDetail" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnRepairDetailOnAction" prefHeight="34.0" prefWidth="224.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Repair Detail" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="11">
-                                <font>
-                                    <Font name="Calibri Bold" size="18.0" />
-                                </font>
-                                <effect>
-                                    <BoxBlur />
-                                </effect>
-                            </JFXButton>
-                            <JFXButton fx:id="btnPlaceRepairOrder" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnPlaceRepairOrderOnAction" prefHeight="34.0" prefWidth="224.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Place Repare Order" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="10">
-                                <font>
-                                    <Font name="Calibri Bold" size="18.0" />
-                                </font>
-                                <effect>
-                                    <BoxBlur />
-                                </effect>
-                            </JFXButton>
-                            <JFXButton fx:id="btnParts" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnPartsOnAction" prefHeight="34.0" prefWidth="224.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Parts" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="9">
-                                <font>
-                                    <Font name="Calibri Bold" size="18.0" />
-                                </font>
-                                <effect>
-                                    <BoxBlur />
-                                </effect>
-                            </JFXButton>
-                            <JFXButton fx:id="BtnReports" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#BtnReportsOnAction" prefHeight="34.0" prefWidth="224.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Reports" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="8">
-                                <font>
-                                    <Font name="Calibri Bold" size="18.0" />
-                                </font>
-                                <effect>
-                                    <BoxBlur />
-                                </effect>
-                            </JFXButton>
-                            <JFXButton fx:id="btnUserRegistration" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnUserRegistrationOnAction" prefHeight="34.0" prefWidth="224.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="User Registration" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="7">
-                                <font>
-                                    <Font name="Calibri Bold" size="18.0" />
-                                </font>
-                                <effect>
-                                    <BoxBlur />
-                                </effect>
-                            </JFXButton>
-                            <JFXButton fx:id="btnMyAccount" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnMyAccount" prefHeight="34.0" prefWidth="224.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="My Account" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="6">
-                                <font>
-                                    <Font name="Calibri Bold" size="18.0" />
-                                </font>
-                                <effect>
-                                    <BoxBlur />
-                                </effect>
-                            </JFXButton>
-                            <ImageView fx:id="imgProfile" fitHeight="223.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@image/img-profile-admin.png" />
-                                </image>
-                            </ImageView>
-                            <Label fx:id="lblProfileName" prefHeight="21.0" prefWidth="128.0" text="Sawanmi Fonseka" GridPane.rowIndex="2">
-                                <font>
-                                    <Font name="System Bold" size="15.0" />
-                                </font>
-                            </Label>
-                            <Label fx:id="lblProfileRole" text="Admin " GridPane.rowIndex="1">
-                                <font>
-                                    <Font name="System Bold" size="18.0" />
-                                </font>
-                            </Label>
-                        </children>
-                    </GridPane>
-                    <GridPane style="-fx-background-color: rgba(226, 255, 253, 1);" GridPane.columnIndex="1">
-                        <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" />
-                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="200.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" />
-                        </columnConstraints>
-                        <rowConstraints>
-                            <RowConstraints minHeight="50.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="299.0" minHeight="20.0" prefHeight="214.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="20.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="50.0" vgrow="SOMETIMES" />
-                        </rowConstraints>
-                        <children>
-                            <JFXButton fx:id="btnSave" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="65.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Save" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                <font>
-                                    <Font name="Calibri Bold" size="18.0" />
-                                </font>
-                                <effect>
-                                    <BoxBlur />
-                                </effect>
-                            </JFXButton>
-                     <Label fx:id="lblUserProfileHeading1" text="Registration New User" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                        <font>
-                           <Font name="System Bold" size="18.0" />
-                        </font>
-                     </Label>
-                     <Label text="Users" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                        <font>
-                           <Font name="System Bold" size="18.0" />
-                        </font>
-                     </Label>
-                     <GridPane style="-fx-background-color: rgba(226, 255, 253, 1);" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                        <columnConstraints>
-                           <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="200.0" prefWidth="250.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                           <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="200.0" prefWidth="250.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" />
-                        </columnConstraints>
-                        <rowConstraints>
-                           <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                           <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                           <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                           <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                           <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                           <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                        </rowConstraints>
-                        <children>
-                           <Label prefHeight="21.0" prefWidth="128.0" text="ID" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <Label prefHeight="21.0" prefWidth="128.0" text="Role ID" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <Label prefHeight="21.0" prefWidth="128.0" text="Role" GridPane.columnIndex="5" GridPane.rowIndex="2">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <Label prefHeight="21.0" prefWidth="128.0" text="e-mail Address" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <Label prefHeight="21.0" prefWidth="128.0" text="Name" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <Label prefHeight="21.0" prefWidth="128.0" text="Passoword" GridPane.columnIndex="5" GridPane.rowIndex="3">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="6" GridPane.rowIndex="3">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="6" GridPane.rowIndex="2">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="6" GridPane.rowIndex="1">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                              <font>
-                                 <Font name="System Bold" size="15.0" />
-                              </font>
-                           </Label>
-                           <TextField fx:id="lblNewPassword11" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                           <TextField fx:id="lblNewPassword21" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                           <TextField fx:id="txtOldPassword1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                           <JFXButton fx:id="btnSave1" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="65.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Save" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="7" GridPane.rowIndex="4">
-                              <font>
-                                 <Font name="Calibri Bold" size="18.0" />
-                              </font>
-                              <effect>
-                                 <BoxBlur />
-                              </effect>
-                           </JFXButton>
-                           <TextField fx:id="lblNewPassword111" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-                           <TextField fx:id="lblNewPassword211" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                           <TextField fx:id="txtOldPassword11" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                        </children>
-                     </GridPane>
-                     <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                       <columns>
-                         <TableColumn prefWidth="75.0" text="C1" />
-                         <TableColumn prefWidth="75.0" text="C2" />
-                       </columns>
-                     </TableView>
-                        </children>
-                    </GridPane>
-                </GridPane>
-                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="1108.0" text=" E &amp; E Service Center (Private) Limited      -       Panadura        -     Repairing of Electronic and Electronic Item">
-                    <font>
-                        <Font name="Calibri Bold" size="21.0" />
-                    </font>
-                </Label>
-            </children>
-        </GridPane>
-    </center>
+   <center>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: rgba(226, 255, 253, 1);" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <JFXButton fx:id="btnSave" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="65.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Save" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <BoxBlur />
+               </effect>
+            </JFXButton>
+            <Label fx:id="lblUserProfileHeading1" text="Register New User">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Users" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <GridPane style="-fx-background-color: rgba(226, 255, 253, 1);" GridPane.rowIndex="1">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="200.0" prefWidth="250.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="200.0" prefWidth="250.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="40.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="40.0" prefHeight="50.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="21.0" prefWidth="128.0" text="ID" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" prefWidth="128.0" text="Role ID" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" prefWidth="128.0" text="Role" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" prefWidth="128.0" text="e-mail Address" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" prefWidth="128.0" text="Name" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" prefWidth="128.0" text="Passoword" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtRoleId" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtEmail" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtId" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <JFXButton fx:id="btnSave" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="71.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Save" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <BoxBlur />
+                     </effect>
+                  </JFXButton>
+                  <TextField fx:id="txtPassword" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtRole" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtName" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <TableView fx:id="tblUser" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="98.0" text="ID" />
+                  <TableColumn fx:id="colName" prefWidth="185.0" text="Name" />
+                  <TableColumn fx:id="colRoleId" prefWidth="108.0" text="Role ID" />
+                  <TableColumn fx:id="colRole" prefWidth="138.0" text="Role" />
+                  <TableColumn fx:id="colEmail" prefWidth="236.0" text="e-mail Address" />
+                  <TableColumn fx:id="colPassword" prefWidth="148.0" text="User Password" />
+                  <TableColumn fx:id="colOpction" prefWidth="86.0" text="Opction" />
+               </columns>
+            </TableView>
+            <JFXButton fx:id="btnReload" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnReloadOnAction" prefHeight="34.0" prefWidth="76.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Reload" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <BoxBlur />
+               </effect>
+            </JFXButton>
+         </children>
+      </GridPane>
+   </center>
 </BorderPane>

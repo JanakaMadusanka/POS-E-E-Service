@@ -10,7 +10,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 
-public class Customer {
+public class CustomerDto {
     private String contact;
     private String name;
     private String address;
