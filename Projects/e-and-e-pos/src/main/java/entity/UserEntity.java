@@ -1,6 +1,5 @@
-package dto.tm;
+package entity;
 
-import javafx.scene.control.Button;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,9 +9,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class CustomerTm {
-    private String contact;
+public class UserEntity {
+    private String id;
     private String name;
-    private String address;
-    private Button btn;
+    private String role;
+    private String email;
+    private String password;
 }

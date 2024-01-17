@@ -10,9 +10,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class CustomerTm {
-    private String contact;
+
+public class UserTm {
+    private String id;
     private String name;
-    private String address;
+    private String role;
+    private String email;
+    private String password;
     private Button btn;
 }

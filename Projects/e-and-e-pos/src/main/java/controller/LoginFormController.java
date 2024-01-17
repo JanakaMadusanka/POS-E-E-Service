@@ -26,11 +26,14 @@ public class LoginFormController {
 
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
+
         Stage stage = (Stage)paneLogin.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterfaceForm.fxml"))));
         stage.setTitle("User Interface Form");
         stage.setResizable(true);
         stage.show();
+
+
     }
 
 }
