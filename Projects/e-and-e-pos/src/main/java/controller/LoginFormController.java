@@ -1,10 +1,8 @@
 package controller;
-import BO.custom.CustomerBo;
+
 import BO.custom.UserLoginBo;
-import BO.custom.impl.CustomerBoImpl;
 import BO.custom.impl.UserLoginBoImpl;
 import com.jfoenix.controls.JFXButton;
-import dto.CustomerDto;
 import dto.UserLoginDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,10 +12,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
 
 public class LoginFormController {
 
@@ -43,31 +39,37 @@ public class LoginFormController {
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
         try {
-            boolean isLogged = userLoginBo.validateLogin(new UserLoginDto(
+            String userRole = userLoginBo.loginRole(new UserLoginDto(
                     txtEmail.getText(),
                     txtPassword.getText()
             ));
-            if (isLogged){
-                new Alert(Alert.AlertType.INFORMATION,"Loging Successfull").show();
 
+            if (userRole == "admin"){
+                new Alert(Alert.AlertType.INFORMATION,"Login Successfull").show();
                 Stage stage = (Stage)paneLogin.getScene().getWindow();
                 stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterfaceForm.fxml"))));
-                stage.setTitle("User Interface Form");
+                stage.setTitle("Admin User Interface Form");
                 stage.setResizable(true);
                 stage.show();
-
+                clearFields();
+                
+            }else if (userRole == "default-user"){
+                new Alert(Alert.AlertType.INFORMATION,"Login Successfull").show();
+                Stage stage = (Stage)paneLogin.getScene().getWindow();
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterfaceForm.fxml"))));
+                stage.setTitle("Default User Interface Form");
+                stage.setResizable(true);
+                stage.show();
+                clearFields();
+            }else{
+                new Alert(Alert.AlertType.INFORMATION,"Incorrect Login Details...").show();
                 clearFields();
             }
-            new Alert(Alert.AlertType.INFORMATION,"Incorrect Loging Details...").show();
-
-
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
 
-
-
-
     }
+
 
 }

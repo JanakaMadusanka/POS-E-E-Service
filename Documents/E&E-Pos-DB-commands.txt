@@ -1,0 +1,130 @@
+CREATE DATABASE e_and_e_service;
+USE e_and_e_service;
+
+--------------------------------------------------------------------------
+
+CREATE TABLE Customer(
+	contact VARCHAR(10),
+	name VARCHAR(20),
+	address VARCHAR(20),
+	CONSTRAINT PRIMARY KEY (contact)
+);
+
+DESCRIBE Customer;
+
+INSERT INTO Customer VALUES('0716399428','Janaa','Matugama');
+
+INSERT INTO Customer VALUES('0777202183','Kasun','Panadura');
+
+INSERT INTO Customer VALUES('0775966635','Madusanka','Matugama');
+
+INSERT INTO Customer VALUES('0716355985','Dilrukshi','Matugama');
+
+INSERT INTO Customer VALUES('0716312528','Rasika','Dodangoda');
+
+
+
+SELECT * FROM Customer; 
+
+
+--------------------------------------------------------------------------------------
+
+CREATE TABLE Role(
+	roleId VARCHAR(10),
+	role VARCHAR(20),
+	CONSTRAINT PRIMARY KEY (roleId),
+	CONSTRAINT UNIQUE KEY (role)
+);
+
+DESCRIBE role;
+
+INSERT INTO Role VALUES('R01','Admin');
+INSERT INTO Role VALUES('R02','Manager');
+INSERT INTO Role VALUES('R03','Technician');
+INSERT INTO Role VALUES('R04','Storekeeper');
+INSERT INTO Role VALUES('R05','Cashier');
+
+
+SELECT * FROM Role; 
+
+
+--------------------------------------------------------------------------------------
+CREATE TABLE User(
+	id VARCHAR(10),
+	name VARCHAR(20),
+	role VARCHAR(20),
+	email VARCHAR(30),
+	password VARCHAR(20),
+	CONSTRAINT PRIMARY KEY (id),
+	CONSTRAINT FOREIGN KEY(role) REFERENCES Role(role)
+);
+
+DESCRIBE User;
+
+INSERT INTO User VALUES('U001','Sawanmi Fonseka','Admin','admin.eande@gmail.com','admin111');
+INSERT INTO User VALUES('U002','Chandana','Manager','manager.eande@gmail.com','manager111');
+INSERT INTO User VALUES('U003','Supun','Technician','tech01.eande@gmail.com','tech111');
+INSERT INTO User VALUES('U004','Indika','Storekeeper','sk.eande@gmail.com','sk111');
+INSERT INTO User VALUES('U005','Asha','Cashier','cashier01.eande@gmail.com','cashier111');
+INSERT INTO User VALUES('U006','Kasun','Cashier','cashier02.eande@gmail.com','cashier222');
+INSERT INTO User VALUES('U007','Kanchana','Technician','tech02.eande@gmail.com','tech222');
+INSERT INTO User VALUES('U008','Pradeep','Technician','tech03.eande@gmail.com','tech333');
+
+SELECT * FROM User; 
+
+//--------------------------------------------------------------------------------------
+
+
+CREATE TABLE Part(
+	code VARCHAR(10),
+	name VARCHAR(20),
+	unitPrice DECIMAL(10,2),
+	qtyOnHand INT(5),
+	CONSTRAINT PRIMARY KEY (code,name)
+);
+
+DESC Part;
+
+
+INSERT INTO Part VALUES('P001','LED',10.00,100);
+INSERT INTO Part VALUES('P002','Fan-Morter',5200.00,5);
+INSERT INTO Part VALUES('P003','Refregitater-gass',8000.00,8);
+INSERT INTO Part VALUES('P004','Ram-8GB',6500.00,7);
+INSERT INTO Part VALUES('P005','Hard-Drive-2TB',18000.00,3);
+
+
+SELECT * FROM Part;
+
+//------------------------------------------------------------------------------------
+
+
+CREATE TABLE RepairOrder(
+	orderId VARCHAR(10),
+	date DATE,
+	customerContact VARCHAR(10),
+	item VARCHAR(20),
+	itemCode VARCHAR(20),
+	CONSTRAINT PRIMARY KEY (orderId),
+	CONSTRAINT FOREIGN KEY(customerContact) REFERENCES Customer(contact)
+);
+
+DESC Orders;
+
+
+
+//------------------------------------------------------------------------------------
+
+
+CREATE TABLE RepairDetail(
+	Id VARCHAR(10),
+	orderId VARCHAR(10),
+	date DATE,
+	customerContact VARCHAR(10),
+	item VARCHAR(20),
+	itemCode VARCHAR(20),
+	CONSTRAINT PRIMARY KEY (Id),
+	CONSTRAINT FOREIGN KEY(orderId) REFERENCES Orders(orderId)
+);
+
+DESC RepairDetail;
+

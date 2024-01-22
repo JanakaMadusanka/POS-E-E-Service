@@ -13,15 +13,18 @@ public class UserLoginBoImpl implements UserLoginBo {
     private UserLoginDao userLoginDao = new UserLoginDaoImpl();
 
     @Override
-    public boolean validateLogin(UserLoginDto userLoginDto) throws SQLException, ClassNotFoundException {
+    public String loginRole(UserLoginDto userLoginDto) throws SQLException, ClassNotFoundException {
         List<UserEntity> entityList = userLoginDao.getAll();
 
         for(UserEntity user : entityList){
-            if((Objects.equals(user.getEmail(), userLoginDto.getEmail())) || (Objects.equals(user.getPassword(), userLoginDto.getPassword()))){
-                return true;
+            if((Objects.equals(user.getEmail(), userLoginDto.getEmail())) && (Objects.equals(user.getPassword(), userLoginDto.getPassword()))){
+                if((Objects.equals(user.getRole(), "Admin"))){
+                    return "admin";
+                }else{
+                    return "default-user";
+                }
             }
         }
-        return false;
-
+        return "wrong-user";
     }
 }

@@ -3,6 +3,8 @@ package dao.custom.impl;
 import dao.custom.UserLoginDao;
 import db.DBConnection;
 import entity.UserEntity;
+import entity.UserLoginEntity;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

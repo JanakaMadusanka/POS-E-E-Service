@@ -1,6 +1,6 @@
 Git Repocitory
 ==============
-gh repo clone JanakaMadusanka/POS-E-E-Service
+https://github.com/JanakaMadusanka/POS-E-E-Service.git
 
 
 Use Case Diagram
