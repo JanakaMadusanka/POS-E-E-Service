@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
-public class UserInterfaceFormController {
+public class UserInterfaceController {
 
     @FXML
     private BorderPane paneUserInterface;
@@ -57,9 +57,15 @@ public class UserInterfaceFormController {
     @FXML
     private BorderPane paneLoader;
 
-
     @FXML
     void btnLogoutOnAction(ActionEvent event) throws IOException {
+        Stage stage = (Stage)paneUserInterface.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/LoginForm.fxml"))));
+        stage.show();
+    }
+
+    @FXML
+    void btnExitOnAction(ActionEvent event) throws IOException {
         Stage stage = (Stage)paneUserInterface.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/LoginForm.fxml"))));
         stage.show();
@@ -80,7 +86,6 @@ public class UserInterfaceFormController {
         Parent load = FXMLLoader.load(resource);
         this.paneLoader.getChildren().clear();
         this.paneLoader.getChildren().add(load);
-
     }
     @FXML
     void BtnReportsOnAction(ActionEvent event) throws IOException {
@@ -89,7 +94,6 @@ public class UserInterfaceFormController {
         Parent load = FXMLLoader.load(resource);
         this.paneLoader.getChildren().clear();
         this.paneLoader.getChildren().add(load);
-
     }
 
     @FXML
@@ -118,6 +122,7 @@ public class UserInterfaceFormController {
         this.paneLoader.getChildren().clear();
         this.paneLoader.getChildren().add(load);
     }
+
     @FXML
     void btnCustomersOnAction(ActionEvent event) throws IOException {
         URL resource = this.getClass().getResource("../view/CustomerForm.fxml");
@@ -126,13 +131,4 @@ public class UserInterfaceFormController {
         this.paneLoader.getChildren().clear();
         this.paneLoader.getChildren().add(load);
     }
-
-    @FXML
-    void btnExitOnAction(ActionEvent event) throws IOException {
-        Stage stage = (Stage)paneUserInterface.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/LoginForm.fxml"))));
-        stage.show();
-    }
-
 }
-

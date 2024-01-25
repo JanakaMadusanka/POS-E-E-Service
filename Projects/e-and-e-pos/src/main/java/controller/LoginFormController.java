@@ -30,6 +30,7 @@ public class LoginFormController {
     private JFXButton btnLogin;
 
     private UserLoginBo userLoginBo = new UserLoginBoImpl();
+    private UserInterfaceController userInterfaceController = new UserInterfaceController();
 
     private void clearFields(){
         txtEmail.clear();
@@ -45,18 +46,18 @@ public class LoginFormController {
             ));
 
             if (userRole == "admin"){
-                new Alert(Alert.AlertType.INFORMATION,"Login Successfull").show();
+                new Alert(Alert.AlertType.INFORMATION,"Admin-Login Successfull").show();
                 Stage stage = (Stage)paneLogin.getScene().getWindow();
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterfaceForm.fxml"))));
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterface.fxml"))));
                 stage.setTitle("Admin User Interface Form");
                 stage.setResizable(true);
                 stage.show();
                 clearFields();
-                
+
             }else if (userRole == "default-user"){
-                new Alert(Alert.AlertType.INFORMATION,"Login Successfull").show();
+                new Alert(Alert.AlertType.INFORMATION,"Default-Login Successfull").show();
                 Stage stage = (Stage)paneLogin.getScene().getWindow();
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterfaceForm.fxml"))));
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterface-default.fxml"))));
                 stage.setTitle("Default User Interface Form");
                 stage.setResizable(true);
                 stage.show();
@@ -68,8 +69,5 @@ public class LoginFormController {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-
     }
-
-
 }
