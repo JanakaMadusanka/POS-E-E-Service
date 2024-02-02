@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -30,14 +31,7 @@
             <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <JFXButton fx:id="btnSave" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="65.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Save" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <BoxBlur />
-               </effect>
-            </JFXButton>
+
             <Label fx:id="lblUserProfileHeading1" text="Register New User">
                <font>
                   <Font name="System Bold" size="18.0" />
@@ -67,17 +61,12 @@
                   <RowConstraints maxHeight="-Infinity" minHeight="40.0" prefHeight="50.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label prefHeight="21.0" prefWidth="128.0" text="ID" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label prefHeight="21.0" prefWidth="128.0" text="ID" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="21.0" prefWidth="128.0" text="Role ID" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Label>
-                  <Label prefHeight="21.0" prefWidth="128.0" text="Role" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                  <Label prefHeight="21.0" prefWidth="128.0" text="Role" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -87,7 +76,7 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="21.0" prefWidth="128.0" text="Name" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                  <Label prefHeight="21.0" prefWidth="128.0" text="Name" GridPane.columnIndex="5" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -112,11 +101,6 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="6" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Label>
                   <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -127,9 +111,8 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtRoleId" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                   <TextField fx:id="txtEmail" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <TextField fx:id="txtId" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtId" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                   <JFXButton fx:id="btnSave" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="71.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Save" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
@@ -139,8 +122,8 @@
                      </effect>
                   </JFXButton>
                   <TextField fx:id="txtPassword" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-                  <TextField fx:id="txtRole" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                  <TextField fx:id="txtName" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtName" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="choiceRole" prefHeight="25.0" prefWidth="266.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <TableView fx:id="tblUser" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">

@@ -13,28 +13,16 @@ c
 3src/main/java/controller/ReportsFormController.java,9\d\9d392074829cc3548275c6dd7ae9351b9f17864e
 a
 1src/main/java/controller/PartsFormController.java,7\3\737a0d96fc03c2d9cdb6d03ab3ffc9a470925141
-l
-<src/main/java/controller/UserRegistrationFormController.java,0\3\03af09122723e303e07faa4c3b35c4c0a26e606e
-U
-%src/main/java/dao/custom/UserDao.java,4\9\49c7f008db4522fee47b03361065c7bf35c9c601
 P
  src/main/java/dao/SupperDao.java,c\f\cf24c001ad2e510feb46985cef14d2225f548e59
 R
 "src/main/java/db/DBConnection.java,f\d\fd7336f68247f5ace91042607378ff616e4285dd
 T
 $src/main/java/dto/tm/CustomerTm.java,2\a\2a0edce3160840b5e1dff3a221d2fba22c0b3f67
-P
- src/main/java/dto/tm/UserTm.java,6\8\68af0671914d4ae278a8eb9324059f9a1256bcee
-N
-src/main/java/dto/UserDto.java,1\5\15c81aa038b853c33b659e8125608969dae8b684
 N
 src/main/java/dao/CrudDao.java,7\8\78e787272942dea7f82a659182496bc242d14ac9
-^
-.src/main/java/dao/custom/impl/UserDaoImpl.java,6\2\62a74c950db36d32f98fa3f1383c905f4f97dba0
 N
 src/main/java/BO/SupperBo.java,f\2\f2c15219e0157444a670857f292bbf4dca3bd86c
-b
-2src/main/java/dao/custom/impl/CustomerDaoImpl.java,0\8\087c42ce946eb8e5dcca01f8bbfc3f04bfcc2b4c
 Y
 )src/main/java/dao/custom/CustomerDao.java,7\9\79570cd3df0ee51e914cdca2f830d194613d93bc
 X
@@ -43,8 +31,6 @@ R
 "src/main/java/dto/CustomerDto.java,6\d\6d52140f8b36d29a5a6973b0fa1a1f02a9fabaeb
 Z
 *src/main/java/dao/custom/UserLoginDao.java,a\0\a095f483556b74cab941126565006a4833f7a6b2
-T
-$src/main/java/entity/UserEntity.java,d\f\dfb9afec9e9226b3755a383af59ab16b35a00392
 S
 #src/main/java/dto/UserLoginDto.java,3\5\35b00c537263454d2037e2b69bc86f2e064788ab
 Y
@@ -57,3 +43,11 @@ X
 (src/main/java/BO/custom/UserLoginBo.java,e\3\e3eefaf89906ba4cb418160303b9cda34881e523
 a
 1src/main/java/BO/custom/impl/UserLoginBoImpl.java,4\8\48c4f4dc0a6691eccbb25b4933fdd62bdbe93d15
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+d
+4src/main/java/controller/CustomerFormController.java,a\a\aa193ff54fd65b5e52212341451fb916ba8b0d1a
+k
+;src/main/java/controller/CustomerReportsFormController.java,f\d\fde1b59ba0f77ab1ccef5ea60e8f0890d135a283
+Q
+!src/main/java/AppInitializer.java,d\8\d8724d5ff68b00b1e87def6fac487d03194f989f

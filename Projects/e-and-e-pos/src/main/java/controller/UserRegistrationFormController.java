@@ -1,8 +1,11 @@
 package controller;
 
+import BO.custom.RoleBo;
 import BO.custom.UserBo;
+import BO.custom.impl.RoleBoImpl;
 import BO.custom.impl.UserBoImpl;
 import com.jfoenix.controls.JFXButton;
+import dto.RoleDto;
 import dto.UserDto;
 import dto.tm.UserTm;
 import javafx.collections.FXCollections;
@@ -15,8 +18,12 @@ import javafx.scene.layout.BorderPane;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserRegistrationFormController {
+
+    @FXML
+    public ChoiceBox choiceRole;
 
     @FXML
     private BorderPane paneUserRegistration;
@@ -73,6 +80,7 @@ public class UserRegistrationFormController {
     private JFXButton btnReload;
 
     private UserBo<UserDto> userBo = new UserBoImpl();
+    private RoleBo roleBo = new RoleBoImpl();
 
     private void clearFields(){
         tblUser.refresh();
@@ -84,7 +92,8 @@ public class UserRegistrationFormController {
         txtId.setEditable(true);
     }
 
-    public void initialize(){
+    public void initialize() throws SQLException, ClassNotFoundException {
+
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colRole.setCellValueFactory(new PropertyValueFactory<>("role"));
@@ -96,14 +105,35 @@ public class UserRegistrationFormController {
         tblUser.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
             setData((UserTm) newValue);
         });
+
+        setChoiceRole();
     }
+
+    private void setChoiceRole() {
+        try {
+            List<RoleDto> roleList = roleBo.allRoles();
+
+            ObservableList<RoleDto> roles = FXCollections.observableArrayList(roleList);
+
+            choiceRole.setItems(FXCollections.observableArrayList(
+                    roleList.stream()
+                            .map(RoleDto::getRole)
+                            .collect(Collectors.toList())
+            ));
+            choiceRole.setValue("Select Role");
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void setData(UserTm newValue) {
         if (newValue != null) {
-            txtId.setEditable(false);
-            txtName.setText(newValue.getId());
-            txtRole.setText(newValue.getName());
-            txtEmail.setText(newValue.getRole());
-            txtPassword.setText(newValue.getEmail());
+            //txtId.setEditable(false);
+            txtId.setText(newValue.getId());
+            txtName.setText(newValue.getName());
+            txtRole.setText(newValue.getRole());
+            txtEmail.setText(newValue.getEmail());
             txtPassword.setText(newValue.getPassword());
         }
     }
@@ -124,11 +154,9 @@ public class UserRegistrationFormController {
                         dto.getPassword(),
                         btn
                 );
-
                 btn.setOnAction(actionEvent -> {
                     deleteUser(c.getId());
                 });
-
                 tmList.add(c);
             }
 
@@ -148,10 +176,15 @@ public class UserRegistrationFormController {
             }else{
                 new Alert(Alert.AlertType.ERROR,"Something went wrong!").show();
             }
-
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void onChoiceBoxSelection() {
+        String selectedOption = (String) choiceRole.getValue();
+        txtRole.setText(selectedOption);
     }
 
     @FXML
@@ -167,7 +200,7 @@ public class UserRegistrationFormController {
             boolean isSaved = userBo.saveUser(new UserDto(
                     txtId.getText(),
                     txtName.getText(),
-                    txtRole.getText(),
+                    (String) choiceRole.getValue(),
                     txtEmail.getText(),
                     txtPassword.getText()
             ));
@@ -176,13 +209,10 @@ public class UserRegistrationFormController {
                 loadUserTable();
                 clearFields();
             }
-
         } catch (SQLIntegrityConstraintViolationException ex){
             new Alert(Alert.AlertType.ERROR,"Duplicate Entry").show();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-
     }
-
 }
