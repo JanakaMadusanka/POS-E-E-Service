@@ -40,7 +40,6 @@
                <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
                <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
                <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
-               <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
            </rowConstraints>
            <children>
                <Label fx:id="lblUserProfileHeading" text="Admin User Profile " GridPane.columnIndex="3">
@@ -48,7 +47,7 @@
                        <Font name="System Bold" size="18.0" />
                    </font>
                </Label>
-               <Label text="Change Login Password" GridPane.columnIndex="3" GridPane.rowIndex="10">
+               <Label text="Change Login Password" GridPane.columnIndex="3" GridPane.rowIndex="9">
                    <font>
                        <Font name="System Bold" size="18.0" />
                    </font>
@@ -78,12 +77,12 @@
                        <Font name="System Bold" size="15.0" />
                    </font>
                </Label>
-               <Label prefHeight="21.0" prefWidth="128.0" text="NIC No." GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <Label prefHeight="21.0" prefWidth="128.0" text="Mobile No." GridPane.columnIndex="1" GridPane.rowIndex="7">
                    <font>
                        <Font name="System Bold" size="15.0" />
                    </font>
                </Label>
-               <Label prefHeight="21.0" prefWidth="128.0" text="Mobile No." GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <Label prefHeight="21.0" prefWidth="128.0" text="New Password" GridPane.columnIndex="1" GridPane.rowIndex="12">
                    <font>
                        <Font name="System Bold" size="15.0" />
                    </font>
@@ -93,22 +92,12 @@
                        <Font name="System Bold" size="15.0" />
                    </font>
                </Label>
-               <Label prefHeight="21.0" prefWidth="128.0" text="New Password" GridPane.columnIndex="1" GridPane.rowIndex="14">
-                   <font>
-                       <Font name="System Bold" size="15.0" />
-                   </font>
-               </Label>
-               <Label prefHeight="21.0" prefWidth="128.0" text="Old Password" GridPane.columnIndex="1" GridPane.rowIndex="12">
+               <Label prefHeight="21.0" prefWidth="128.0" text="Old Password" GridPane.columnIndex="1" GridPane.rowIndex="11">
                    <font>
                        <Font name="System Bold" size="15.0" />
                    </font>
                </Label>
                <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                   <font>
-                       <Font name="System Bold" size="15.0" />
-                   </font>
-               </Label>
-               <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="2" GridPane.rowIndex="14">
                    <font>
                        <Font name="System Bold" size="15.0" />
                    </font>
@@ -123,7 +112,7 @@
                        <Font name="System Bold" size="15.0" />
                    </font>
                </Label>
-               <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="2" GridPane.rowIndex="8">
+               <Label prefHeight="21.0" prefWidth="128.0" text=":" GridPane.columnIndex="2" GridPane.rowIndex="11">
                    <font>
                        <Font name="System Bold" size="15.0" />
                    </font>
@@ -153,17 +142,16 @@
                        <Font name="System Bold" size="15.0" />
                    </font>
                </Label>
-               <Label fx:id="lblUserId" prefHeight="21.0" prefWidth="128.0" text="U001" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-               <Label fx:id="lblMobile" prefHeight="21.0" prefWidth="128.0" text="0716565352" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-               <Label fx:id="lblNIC" prefHeight="21.0" prefWidth="128.0" text="861725352V" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+               <Label fx:id="lblUserId" prefHeight="21.0" prefWidth="128.0" text="U010" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+               <Label fx:id="lblMobile" prefHeight="21.0" prefWidth="128.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
                <Label fx:id="lblEmail" prefHeight="21.0" prefWidth="205.0" text="admin.eande@gmail.com" GridPane.columnIndex="3" GridPane.rowIndex="6" />
                <Label fx:id="lblRole" prefHeight="21.0" prefWidth="128.0" text="Admin" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-               <Label fx:id="lblRoleId" prefHeight="21.0" prefWidth="128.0" text="A01" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+               <Label fx:id="lblRoleId" prefHeight="21.0" prefWidth="128.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                <Label fx:id="lblUserName" prefHeight="21.0" prefWidth="128.0" text="Sawanmi Fonseka" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-               <TextField fx:id="lblNewPassword1" GridPane.columnIndex="3" GridPane.rowIndex="13" />
-               <TextField fx:id="lblNewPassword2" GridPane.columnIndex="3" GridPane.rowIndex="14" />
-               <TextField fx:id="txtOldPassword" GridPane.columnIndex="3" GridPane.rowIndex="12" />
-               <JFXButton fx:id="btnSave" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="65.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Save" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="3" GridPane.rowIndex="15">
+               <TextField fx:id="txtNewPassword1" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+               <TextField fx:id="txtNewPassword2" GridPane.columnIndex="3" GridPane.rowIndex="13" />
+               <TextField fx:id="txtOldPassword" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+               <JFXButton fx:id="btnUpdate" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="98.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Update" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="3" GridPane.rowIndex="14">
                    <font>
                        <Font name="Calibri Bold" size="18.0" />
                    </font>
@@ -171,7 +159,6 @@
                        <BoxBlur />
                    </effect>
                </JFXButton>
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="12" />
            </children>
        </GridPane>
    </center>

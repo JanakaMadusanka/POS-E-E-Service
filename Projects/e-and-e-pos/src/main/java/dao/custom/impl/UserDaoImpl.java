@@ -35,6 +35,15 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public boolean updatePassword(UserEntity entity) throws SQLException, ClassNotFoundException {
+        String sql = "UPDATE User SET password=? WHERE id=?";
+        PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
+        pstm.setString(1,entity.getPassword());
+        pstm.setString(2,entity.getId());
+        return pstm.executeUpdate()>0;
+    }
+
+    @Override
     public boolean delete(String value) throws SQLException, ClassNotFoundException {
         String sql = "DELETE from User WHERE id=?";
         PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
@@ -59,5 +68,25 @@ public class UserDaoImpl implements UserDao {
             ));
         }
         return list;
+    }
+    public UserEntity search(String id) throws SQLException, ClassNotFoundException {
+
+        String sql = "SELECT * FROM User WHERE id = ?";
+        PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
+        pstm.setString(1,id);
+        ResultSet resultSet = pstm.executeQuery();
+
+
+        if (resultSet.next()) {
+            return new UserEntity(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5)
+            );
+        } else {
+            return null; // Return null if no user with the given id is found
+        }
     }
 }

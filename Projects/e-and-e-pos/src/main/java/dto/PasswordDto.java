@@ -1,4 +1,4 @@
-package entity;
+package dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,10 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class UserLoginEntity {
+public class PasswordDto {
     private String id;
-    private String name;
-    private String role;
-    private String email;
     private String password;
 }

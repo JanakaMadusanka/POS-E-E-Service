@@ -1,15 +1,25 @@
 package controller;
 
+import BO.custom.MyAccountBo;
+import BO.custom.impl.MyAccountBoImpl;
 import com.jfoenix.controls.JFXButton;
+import dto.PasswordDto;
+import dto.UserDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import java.sql.SQLException;
 
 public class MyAccountFormController {
 
+    public JFXButton btnUpdate;
+    public TextField txtNewPassword2;
+    public TextField txtNewPassword1;
+    public TextField txtOldPassword;
     @FXML
     private BorderPane paneMyAccount;
 
@@ -40,52 +50,52 @@ public class MyAccountFormController {
     @FXML
     private Label lblUserName;
 
-    @FXML
-    private TextField lblNewPassword1;
+    private MyAccountBo<PasswordDto> myAccountBo = new MyAccountBoImpl();
 
-    @FXML
-    private TextField lblNewPassword2;
+    private void clearFields(){
+        txtOldPassword.clear();
+        txtNewPassword1.clear();
+        txtNewPassword2.clear();
+    }
 
-    @FXML
-    private TextField txtOldPassword;
+    public void initialize() throws SQLException, ClassNotFoundException {
 
-    @FXML
-    private JFXButton btnSave;
-
-    @FXML
-    void btnSaveOnAction(ActionEvent event) {
-//        try {
-//            String userRole = userLoginBo.loginRole(new UserLoginDto(
-//                    txtEmail.getText(),
-//                    txtPassword.getText()
-//            ));
-//
-//            if (userRole == "admin"){
-//                new Alert(Alert.AlertType.INFORMATION,"Admin-Login Successfull").show();
-//                Stage stage = (Stage)paneLogin.getScene().getWindow();
-//                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterface.fxml"))));
-//                stage.setTitle("Admin User Interface Form");
-//                stage.setResizable(true);
-//                stage.show();
-//                clearFields();
-//
-//            }else if (userRole == "default-user"){
-//                new Alert(Alert.AlertType.INFORMATION,"Default-Login Successfull").show();
-//                Stage stage = (Stage)paneLogin.getScene().getWindow();
-//                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterface-default.fxml"))));
-//                stage.setTitle("Default User Interface Form");
-//                stage.setResizable(true);
-//                stage.show();
-//                clearFields();
-//            }else{
-//                new Alert(Alert.AlertType.INFORMATION,"Incorrect Login Details...").show();
-//                clearFields();
-//            }
-//        } catch (ClassNotFoundException | SQLException e) {
-//            e.printStackTrace();
-//        }
+        setMyAccount("U010");
 
     }
 
+    public void setMyAccount(String id) throws SQLException, ClassNotFoundException {
+        UserDto dto = myAccountBo.getMyAccount(id);
+        lblUserId.setText(dto.getId());
+        lblUserName.setText(dto.getName());
+        lblRole.setText(dto.getRole());
+        lblEmail.setText(dto.getEmail());
+    }
+
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+        try {
+            if((txtOldPassword.getText()).equals("janaka")){
+                if((txtNewPassword2.getText()).equals(txtNewPassword1.getText())){
+                    boolean isUpdated = myAccountBo.updatePassword(new PasswordDto(
+                            lblUserId.getText(),
+                            txtNewPassword2.getText()
+                    ));
+
+                    if (isUpdated){
+                        new Alert(Alert.AlertType.INFORMATION,"Password Changed!").show();
+                        clearFields();
+                    }
+                }else {
+                    new Alert(Alert.AlertType.INFORMATION,"The New passwords entered do not match.!").show();
+                }
+            }else {
+                new Alert(Alert.AlertType.INFORMATION,"The Old password entered do not match.!").show();
+            }
+
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
 

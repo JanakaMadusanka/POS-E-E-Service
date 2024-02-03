@@ -15,8 +15,6 @@ T
 $src/main/java/dto/tm/CustomerTm.java,2\a\2a0edce3160840b5e1dff3a221d2fba22c0b3f67
 N
 src/main/java/dao/CrudDao.java,7\8\78e787272942dea7f82a659182496bc242d14ac9
-N
-src/main/java/BO/SupperBo.java,f\2\f2c15219e0157444a670857f292bbf4dca3bd86c
 Y
 )src/main/java/dao/custom/CustomerDao.java,7\9\79570cd3df0ee51e914cdca2f830d194613d93bc
 X
@@ -29,14 +27,8 @@ S
 #src/main/java/dto/UserLoginDto.java,3\5\35b00c537263454d2037e2b69bc86f2e064788ab
 Y
 )src/main/java/entity/UserLoginEntity.java,6\a\6a21089be90cced04fa9387e9d1d8f298f0cf5bc
-c
-3src/main/java/dao/custom/impl/UserLoginDaoImpl.java,a\1\a16fff97fdbd5695f978589d38405fcd5429c0b7
-`
-0src/main/java/BO/custom/impl/CustomerBoImpl.java,9\6\9608cf90867c3c1a9efdaba5d818a185fd6e19e1
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-d
-4src/main/java/controller/CustomerFormController.java,a\a\aa193ff54fd65b5e52212341451fb916ba8b0d1a
 k
 ;src/main/java/controller/CustomerReportsFormController.java,f\d\fde1b59ba0f77ab1ccef5ea60e8f0890d135a283
 Q
