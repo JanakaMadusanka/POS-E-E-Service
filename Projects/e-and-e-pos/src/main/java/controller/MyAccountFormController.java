@@ -54,6 +54,36 @@ public class MyAccountFormController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+//        try {
+//            String userRole = userLoginBo.loginRole(new UserLoginDto(
+//                    txtEmail.getText(),
+//                    txtPassword.getText()
+//            ));
+//
+//            if (userRole == "admin"){
+//                new Alert(Alert.AlertType.INFORMATION,"Admin-Login Successfull").show();
+//                Stage stage = (Stage)paneLogin.getScene().getWindow();
+//                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterface.fxml"))));
+//                stage.setTitle("Admin User Interface Form");
+//                stage.setResizable(true);
+//                stage.show();
+//                clearFields();
+//
+//            }else if (userRole == "default-user"){
+//                new Alert(Alert.AlertType.INFORMATION,"Default-Login Successfull").show();
+//                Stage stage = (Stage)paneLogin.getScene().getWindow();
+//                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterface-default.fxml"))));
+//                stage.setTitle("Default User Interface Form");
+//                stage.setResizable(true);
+//                stage.show();
+//                clearFields();
+//            }else{
+//                new Alert(Alert.AlertType.INFORMATION,"Incorrect Login Details...").show();
+//                clearFields();
+//            }
+//        } catch (ClassNotFoundException | SQLException e) {
+//            e.printStackTrace();
+//        }
 
     }
 

@@ -24,6 +24,7 @@ public class UserRegistrationFormController {
 
     @FXML
     public ChoiceBox choiceRole;
+    public JFXButton btnUpdate;
 
     @FXML
     private BorderPane paneUserRegistration;
@@ -76,9 +77,6 @@ public class UserRegistrationFormController {
     @FXML
     private TableColumn<?, ?> colOpction;
 
-    @FXML
-    private JFXButton btnReload;
-
     private UserBo<UserDto> userBo = new UserBoImpl();
     private RoleBo roleBo = new RoleBoImpl();
 
@@ -86,7 +84,6 @@ public class UserRegistrationFormController {
         tblUser.refresh();
         txtId.clear();
         txtName.clear();
-        txtRole.clear();
         txtEmail.clear();
         txtPassword.clear();
         txtId.setEditable(true);
@@ -129,10 +126,10 @@ public class UserRegistrationFormController {
 
     private void setData(UserTm newValue) {
         if (newValue != null) {
-            //txtId.setEditable(false);
+            txtId.setEditable(false);
             txtId.setText(newValue.getId());
             txtName.setText(newValue.getName());
-            txtRole.setText(newValue.getRole());
+            choiceRole.setValue(newValue.getRole());
             txtEmail.setText(newValue.getEmail());
             txtPassword.setText(newValue.getPassword());
         }
@@ -183,15 +180,8 @@ public class UserRegistrationFormController {
 
     @FXML
     public void onChoiceBoxSelection() {
-        String selectedOption = (String) choiceRole.getValue();
-        txtRole.setText(selectedOption);
-    }
-
-    @FXML
-    void btnReloadOnAction(ActionEvent event) {
-        loadUserTable();
-        tblUser.refresh();
-        clearFields();
+//        String selectedOption = (String) choiceRole.getValue();
+//        txtRole.setText(selectedOption);
     }
 
     @FXML
@@ -207,10 +197,30 @@ public class UserRegistrationFormController {
             if (isSaved){
                 new Alert(Alert.AlertType.INFORMATION,"User Saved!").show();
                 loadUserTable();
+                //tblUser.refresh();
                 clearFields();
             }
         } catch (SQLIntegrityConstraintViolationException ex){
             new Alert(Alert.AlertType.ERROR,"Duplicate Entry").show();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+        try {
+            boolean isUpdated = userBo.updateUser(new UserDto(
+                    txtId.getText(),
+                    txtName.getText(),
+                    (String) choiceRole.getValue(),
+                    txtEmail.getText(),
+                    txtPassword.getText()
+            ));
+            if (isUpdated){
+                new Alert(Alert.AlertType.INFORMATION,"User Updated!").show();
+                loadUserTable();
+                clearFields();
+            }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

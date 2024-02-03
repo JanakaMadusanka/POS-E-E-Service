@@ -59,6 +59,7 @@
                   <RowConstraints maxHeight="-Infinity" minHeight="40.0" prefHeight="50.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="50.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="-Infinity" minHeight="40.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="40.0" prefHeight="50.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
                   <Label prefHeight="21.0" prefWidth="128.0" text="ID" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -113,7 +114,7 @@
                   </Label>
                   <TextField fx:id="txtEmail" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                   <TextField fx:id="txtId" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <JFXButton fx:id="btnSave" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="71.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Save" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                  <JFXButton fx:id="btnSave" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="123.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Save" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -124,6 +125,14 @@
                   <TextField fx:id="txtPassword" GridPane.columnIndex="7" GridPane.rowIndex="3" />
                   <TextField fx:id="txtName" GridPane.columnIndex="7" GridPane.rowIndex="2" />
                   <ChoiceBox fx:id="choiceRole" prefHeight="25.0" prefWidth="266.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <JFXButton fx:id="btnUpdate" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="123.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Update" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="7" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <BoxBlur />
+                     </effect>
+                  </JFXButton>
                </children>
             </GridPane>
             <TableView fx:id="tblUser" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
@@ -137,14 +146,6 @@
                   <TableColumn fx:id="colOpction" prefWidth="86.0" text="Opction" />
                </columns>
             </TableView>
-            <JFXButton fx:id="btnReload" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnReloadOnAction" prefHeight="34.0" prefWidth="76.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Reload" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <BoxBlur />
-               </effect>
-            </JFXButton>
          </children>
       </GridPane>
    </center>

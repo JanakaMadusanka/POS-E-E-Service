@@ -1,16 +1,10 @@
 
-e
-5src/main/java/controller/MyAccountFormController.java,d\e\dedadc9a60c2e2c2f036add4b07f74eb7e88964a
 h
 8src/main/java/controller/RepairDetailFormController.java,d\f\dfb785017cb8ddaba9bce96581fe519ba04deac9
 l
 <src/main/java/controller/PlaceRepairOrderFormController.java,2\5\25e9212aa732561ad59e939d8c0f0a3c0fd49e82
 h
 8src/main/java/controller/OrderReportsFormController.java,f\8\f8145820255630d64d0e6acc91a4debc3f33b742
-h
-8src/main/java/controller/SalesReportsFormController.java,1\d\1d8061b2abd91cf7371beaadb722aa14b4c5da95
-c
-3src/main/java/controller/ReportsFormController.java,9\d\9d392074829cc3548275c6dd7ae9351b9f17864e
 a
 1src/main/java/controller/PartsFormController.java,7\3\737a0d96fc03c2d9cdb6d03ab3ffc9a470925141
 P
@@ -39,10 +33,6 @@ c
 3src/main/java/dao/custom/impl/UserLoginDaoImpl.java,a\1\a16fff97fdbd5695f978589d38405fcd5429c0b7
 `
 0src/main/java/BO/custom/impl/CustomerBoImpl.java,9\6\9608cf90867c3c1a9efdaba5d818a185fd6e19e1
-X
-(src/main/java/BO/custom/UserLoginBo.java,e\3\e3eefaf89906ba4cb418160303b9cda34881e523
-a
-1src/main/java/BO/custom/impl/UserLoginBoImpl.java,4\8\48c4f4dc0a6691eccbb25b4933fdd62bdbe93d15
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 d
