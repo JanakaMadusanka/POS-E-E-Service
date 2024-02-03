@@ -6,7 +6,6 @@ import dao.custom.impl.UserDaoImpl;
 import dto.PasswordDto;
 import dto.UserDto;
 import entity.UserEntity;
-
 import java.sql.SQLException;
 
 public class MyAccountBoImpl implements MyAccountBo<PasswordDto> {

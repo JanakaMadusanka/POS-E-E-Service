@@ -89,4 +89,24 @@ public class UserDaoImpl implements UserDao {
             return null; // Return null if no user with the given id is found
         }
     }
+    public UserEntity searchByEmail(String email) throws SQLException, ClassNotFoundException {
+
+        String sql = "SELECT * FROM User WHERE email = ?";
+        PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
+        pstm.setString(1,email);
+        ResultSet resultSet = pstm.executeQuery();
+
+
+        if (resultSet.next()) {
+            return new UserEntity(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5)
+            );
+        } else {
+            return null; // Return null if no user with the given id is found
+        }
+    }
 }

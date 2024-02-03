@@ -1,9 +1,10 @@
 package BO.custom;
 
 import BO.SupperBo;
-import dto.UserLoginDto;
+import dto.UserDto;
+
 import java.sql.SQLException;
 
 public interface UserLoginBo extends SupperBo {
-    String loginRole(UserLoginDto userLoginDto) throws SQLException, ClassNotFoundException;
+    boolean isUser(UserDto userDto) throws SQLException, ClassNotFoundException;
 }

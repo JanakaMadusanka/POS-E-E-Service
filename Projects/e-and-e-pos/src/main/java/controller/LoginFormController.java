@@ -3,7 +3,7 @@ package controller;
 import BO.custom.UserLoginBo;
 import BO.custom.impl.UserLoginBoImpl;
 import com.jfoenix.controls.JFXButton;
-import dto.UserLoginDto;
+import dto.UserDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +14,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
 
 public class LoginFormController {
@@ -42,40 +41,38 @@ public class LoginFormController {
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
 
-//                Stage stage = (Stage)paneLogin.getScene().getWindow();
-//                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/MyAccountForm.fxml"))));
-//                stage.setTitle("Admin User Interface Form");
-//                stage.setResizable(true);
-//                stage.show();
-//                clearFields();
-
         try {
-            String userRole = userLoginBo.loginRole(new UserLoginDto(
+            boolean isUser = userLoginBo.isUser(new UserDto(
+                    "",
+                    "",
+                    "",
                     txtEmail.getText(),
                     txtPassword.getText()
             ));
 
-            if (userRole == "admin"){
+            Stage stage = (Stage)paneLogin.getScene().getWindow();
+
+            if (isUser){
+
                 new Alert(Alert.AlertType.INFORMATION,"Admin-Login Successfull").show();
-                Stage stage = (Stage)paneLogin.getScene().getWindow();
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterface.fxml"))));
-                stage.setTitle("Admin User Interface Form");
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/UserInterface.fxml"));
+                Parent root = loader.load();
+
+                UserInterfaceController controller = loader.getController();
+                controller.setLoginData(txtEmail.getText());
+
+                stage.setScene(new Scene(root));
+                stage.setTitle("User Interface Form");
                 stage.setResizable(true);
                 stage.show();
                 clearFields();
 
-            }else if (userRole == "default-user"){
-                new Alert(Alert.AlertType.INFORMATION,"Default-Login Successfull").show();
-                Stage stage = (Stage)paneLogin.getScene().getWindow();
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserInterface-default.fxml"))));
-                stage.setTitle("Default User Interface Form");
-                stage.setResizable(true);
-                stage.show();
-                clearFields();
             }else{
                 new Alert(Alert.AlertType.INFORMATION,"Incorrect Login Details...").show();
                 clearFields();
             }
+
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

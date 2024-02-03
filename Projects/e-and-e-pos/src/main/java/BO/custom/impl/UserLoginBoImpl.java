@@ -1,30 +1,26 @@
 package BO.custom.impl;
 
 import BO.custom.UserLoginBo;
-import dao.custom.UserLoginDao;
-import dao.custom.impl.UserLoginDaoImpl;
-import dto.UserLoginDto;
+import dao.custom.UserDao;
+import dao.custom.impl.UserDaoImpl;
+import dto.UserDto;
 import entity.UserEntity;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 
 public class UserLoginBoImpl implements UserLoginBo {
-    private UserLoginDao userLoginDao = new UserLoginDaoImpl();
+    private UserDao userDao = new UserDaoImpl();
 
     @Override
-    public String loginRole(UserLoginDto userLoginDto) throws SQLException, ClassNotFoundException {
-        List<UserEntity> entityList = userLoginDao.getAll();
+    public boolean isUser(UserDto userDto) throws SQLException, ClassNotFoundException {
+        List<UserEntity> entityList = userDao.getAll();
 
         for(UserEntity user : entityList){
-            if((Objects.equals(user.getEmail(), userLoginDto.getEmail())) && (Objects.equals(user.getPassword(), userLoginDto.getPassword()))){
-                if((Objects.equals(user.getRole(), "Admin"))){
-                    return "admin";
-                }else{
-                    return "default-user";
-                }
+            if((Objects.equals(user.getEmail(), userDto.getEmail())) && (Objects.equals(user.getPassword(), userDto.getPassword()))){
+                return true;
             }
         }
-        return "wrong-user";
+        return false;
     }
 }

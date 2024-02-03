@@ -107,7 +107,7 @@
                                     <BoxBlur />
                                 </effect>
                             </JFXButton>
-                            <JFXButton fx:id="BtnReports" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#BtnReportsOnAction" prefHeight="34.0" prefWidth="224.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Reports" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="8">
+                            <JFXButton fx:id="btnReports" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnReportsOnAction" prefHeight="34.0" prefWidth="224.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Reports" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.rowIndex="8">
                                 <font>
                                     <Font name="Calibri Bold" size="18.0" />
                                 </font>
@@ -136,12 +136,12 @@
                                     <Image url="@image/img-profile-admin.png" />
                                 </image>
                             </ImageView>
-                            <Label fx:id="lblProfileName" prefHeight="21.0" prefWidth="128.0" text="Sawanmi Fonseka" GridPane.rowIndex="2">
+                            <Label fx:id="lblProfileName" prefHeight="21.0" prefWidth="128.0" text="My Name" GridPane.rowIndex="2">
                                 <font>
                                     <Font name="System Bold" size="15.0" />
                                 </font>
                             </Label>
-                            <Label fx:id="lblProfileRole" text="Admin " GridPane.rowIndex="1">
+                            <Label fx:id="lblProfileRole" text="My Role" GridPane.rowIndex="1">
                                 <font>
                                     <Font name="System Bold" size="18.0" />
                                 </font>
@@ -162,7 +162,7 @@
                         <children>
                             <BorderPane fx:id="paneLoader" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                         <center>
-                           <Label text="Welcome to Admin-User" BorderPane.alignment="CENTER">
+                           <Label fx:id="lblWelcome" text="Welcome-User" BorderPane.alignment="CENTER">
                               <font>
                                  <Font name="Calibri Italic" size="48.0" />
                               </font>
