@@ -79,7 +79,7 @@ CREATE TABLE Part(
 	code VARCHAR(10),
 	name VARCHAR(20),
 	unitPrice DECIMAL(10,2),
-	qtyOnHand INT(5),
+	qtyOnHand INT,
 	CONSTRAINT PRIMARY KEY (code,name)
 );
 

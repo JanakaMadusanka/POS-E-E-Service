@@ -64,10 +64,11 @@
                                 <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
                                 <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
                                 <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                                 <RowConstraints maxHeight="-Infinity" minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Label prefHeight="21.0" prefWidth="128.0" text="Item Code" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <Label prefHeight="21.0" prefWidth="128.0" text="Part Code" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <font>
                                         <Font name="System Bold" size="15.0" />
                                     </font>
@@ -109,7 +110,7 @@
                                 </Label>
                                 <TextField fx:id="txtUnitPrice" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                                 <TextField fx:id="txtCode" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                                <JFXButton fx:id="btnSave" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="61.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Save" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                <JFXButton fx:id="btnSave" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="114.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Save Part" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                                     <font>
                                         <Font name="Calibri Bold" size="18.0" />
                                     </font>
@@ -117,8 +118,16 @@
                                         <BoxBlur />
                                     </effect>
                                 </JFXButton>
-                                <TextField fx:id="tstQty" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                                <TextField fx:id="txtQty" GridPane.columnIndex="7" GridPane.rowIndex="2" />
                                 <TextField fx:id="txtDescription" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <JFXButton fx:id="btnAdd" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnAddOnAction" prefHeight="34.0" prefWidth="101.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Add QTY" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="7" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                           <effect>
+                              <BoxBlur />
+                           </effect>
+                        </JFXButton>
                             </children>
                         </GridPane>
                         <TableView fx:id="tblParts" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
@@ -130,14 +139,6 @@
                         <TableColumn fx:id="colOpction" prefWidth="106.0" text="Opction" />
                             </columns>
                         </TableView>
-                  <JFXButton fx:id="btnReload" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnReloadOnAction" prefHeight="34.0" prefWidth="76.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Reload" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
-                     <font>
-                        <Font name="Calibri Bold" size="18.0" />
-                     </font>
-                     <effect>
-                        <BoxBlur />
-                     </effect>
-                  </JFXButton>
                     </children>
                 </GridPane>
             </children>
