@@ -54,7 +54,7 @@ public class LoginFormController {
 
             if (isUser){
 
-                new Alert(Alert.AlertType.INFORMATION,"Admin-Login Successfull").show();
+                new Alert(Alert.AlertType.INFORMATION,"Login Successfull...").show();
 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/UserInterface.fxml"));
                 Parent root = loader.load();

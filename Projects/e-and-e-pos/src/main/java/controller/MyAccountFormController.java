@@ -92,7 +92,6 @@ public class MyAccountFormController {
                 new Alert(Alert.AlertType.INFORMATION,"The Old password entered do not match.!").show();
             }
 
-
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

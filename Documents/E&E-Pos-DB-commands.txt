@@ -99,8 +99,9 @@ SELECT * FROM Part;
 
 
 CREATE TABLE RepairOrder(
-	orderId VARCHAR(10),
+	orderId INT,
 	date DATE,
+	description VARCHAR(20),
 	customerContact VARCHAR(10),
 	item VARCHAR(20),
 	itemCode VARCHAR(20),
@@ -108,7 +109,8 @@ CREATE TABLE RepairOrder(
 	CONSTRAINT FOREIGN KEY(customerContact) REFERENCES Customer(contact)
 );
 
-DESC Orders;
+DESC RepairOrder;
+SELECT * FROM RepairOrder;
 
 
 

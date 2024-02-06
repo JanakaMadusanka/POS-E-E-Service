@@ -171,7 +171,6 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtItemNumber" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                         <JFXButton fx:id="btnPlaceOrder" alignment="BASELINE_CENTER" buttonType="RAISED" onAction="#btnPlaceOrderOnAction" prefHeight="34.0" prefWidth="185.0" ripplerFill="#824949" style="-fx-background-color: rgba(27, 96, 83, 1);" text="Place Repair Order" textFill="#eeecec" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="10" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                            <font>
                               <Font name="Calibri Bold" size="18.0" />
@@ -196,7 +195,8 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtDate" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtDate" promptText="YYYY-MM-DD" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtOrderNo" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                   <GridPane style="-fx-background-color: rgba(226, 255, 253, 1);" GridPane.rowIndex="5">

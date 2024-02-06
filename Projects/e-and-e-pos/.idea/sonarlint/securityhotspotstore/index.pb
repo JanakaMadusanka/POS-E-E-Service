@@ -1,35 +1,15 @@
 
 h
 8src/main/java/controller/RepairDetailFormController.java,d\f\dfb785017cb8ddaba9bce96581fe519ba04deac9
-l
-<src/main/java/controller/PlaceRepairOrderFormController.java,2\5\25e9212aa732561ad59e939d8c0f0a3c0fd49e82
 h
 8src/main/java/controller/OrderReportsFormController.java,f\8\f8145820255630d64d0e6acc91a4debc3f33b742
 a
 1src/main/java/controller/PartsFormController.java,7\3\737a0d96fc03c2d9cdb6d03ab3ffc9a470925141
-P
- src/main/java/dao/SupperDao.java,c\f\cf24c001ad2e510feb46985cef14d2225f548e59
 R
 "src/main/java/db/DBConnection.java,f\d\fd7336f68247f5ace91042607378ff616e4285dd
 T
 $src/main/java/dto/tm/CustomerTm.java,2\a\2a0edce3160840b5e1dff3a221d2fba22c0b3f67
-N
-src/main/java/dao/CrudDao.java,7\8\78e787272942dea7f82a659182496bc242d14ac9
 X
 (src/main/java/entity/CustomerEntity.java,7\e\7ea5ec04bc453d7a1519e9b573842d48175df056
-Y
-)src/main/java/dao/custom/CustomerDao.java,7\9\79570cd3df0ee51e914cdca2f830d194613d93bc
-R
-"src/main/java/dto/CustomerDto.java,6\d\6d52140f8b36d29a5a6973b0fa1a1f02a9fabaeb
-Z
-*src/main/java/dao/custom/UserLoginDao.java,a\0\a095f483556b74cab941126565006a4833f7a6b2
-S
-#src/main/java/dto/UserLoginDto.java,3\5\35b00c537263454d2037e2b69bc86f2e064788ab
-Y
-)src/main/java/entity/UserLoginEntity.java,6\a\6a21089be90cced04fa9387e9d1d8f298f0cf5bc
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 k
 ;src/main/java/controller/CustomerReportsFormController.java,f\d\fde1b59ba0f77ab1ccef5ea60e8f0890d135a283
-Q
-!src/main/java/AppInitializer.java,d\8\d8724d5ff68b00b1e87def6fac487d03194f989f

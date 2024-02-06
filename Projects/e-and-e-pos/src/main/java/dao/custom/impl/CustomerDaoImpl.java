@@ -3,6 +3,8 @@ package dao.custom.impl;
 import dao.custom.CustomerDao;
 import db.DBConnection;
 import entity.CustomerEntity;
+import entity.UserEntity;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -54,5 +56,22 @@ public class CustomerDaoImpl implements CustomerDao {
             ));
         }
         return list;
+    }
+    public CustomerEntity searchByContact(String contact) throws SQLException, ClassNotFoundException {
+
+        String sql = "SELECT * FROM Customer WHERE contact = ?";
+        PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
+        pstm.setString(1,contact);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            return new CustomerEntity(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3)
+            );
+        } else {
+            return null; // Return null if no user with the given id is found
+        }
     }
 }
